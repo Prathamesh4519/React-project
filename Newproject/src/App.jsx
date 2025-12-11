@@ -2,25 +2,25 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-// import "tailwindcss";
+import "tailwindcss";
 
 function App() {
-let [counter,setcounter]= useState(15);
-const addval= ()=>{
-  if(counter<=20){
-setcounter(counter+1);
-}}
-const subval=()=>{
- if(counter >=10) setcounter(counter -1);
-}
+const [color,setColor]=useState("black")
   return (
     <>
-     <h1 className='bg-green-400'>Prathamesh Kale</h1>
-     <h2>Count={counter}</h2>
-     <button
-   onClick={addval}  >Add value</button>
-     <button
-     onClick={subval}>Sub value</button>
+    
+    <div className="w-full h-screen duration-200"  style={{backgroundColor:color}} >
+<div className='fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2'>
+  <div className='flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-2xl'>
+    <button onClick={()=>setColor("red")}
+    className='outline-none px-4 py-2 rounded-full text-white shadow-xl' style={{backgroundColor:"red"}}>Red</button>
+    <button onClick={()=>setColor("blue")}
+    className='outline-none px-4 py-2 rounded-full text-white shadow-xl' style={{backgroundColor:"blue"}}>Blue</button>
+    <button onClick={()=>setColor("green")}
+    className='outline-none px-4 py-2 rounded-full text-white shadow-xl' style={{backgroundColor:"green"}}>Green</button>
+  </div>
+</div>
+    </div>
     </>
   )
 }
